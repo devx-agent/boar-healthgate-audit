@@ -1,0 +1,12 @@
+diff --git a/android-native/engine/src/main/java/team/sopa/boar/engine/answer/HealthTerms.kt b/android-native/engine/src/main/java/team/sopa/boar/engine/answer/HealthTerms.kt
+index f22bb68..81a20f7 100644
+--- a/android-native/engine/src/main/java/team/sopa/boar/engine/answer/HealthTerms.kt
++++ b/android-native/engine/src/main/java/team/sopa/boar/engine/answer/HealthTerms.kt
+@@ -24,6 +24,7 @@ object HealthTerms {
+         "childDose" to JsRegex.re("""(?<![\p{L}])(?:child|kid|baby|toddler|infant|newborn|son|daughter|\d+[- ]?(?:year|month|yr)[- ]?old|niñ[oa])(?![\p{L}])[^.?!]{0,60}(?<![\p{L}])(?:ml|syrup|drops|gotas|dose|mg|medicine)(?![\p{L}])|(?<![\p{L}])(?:newborn|infant|preemie)(?![\p{L}])""", "iu"),
+         "trauma" to JsRegex.re("""(?<![\p{L}\p{N}])(?:fell\s+\d+(?:[.,]\d+)?\s*(?:m|ft|feet|meters|metres|stories|storeys)|fell (?:off|from) (?:a|the|his|her|my|their) (?:ladder|roof|tree|horse|bike|bicycle|balcony|wall|cliff|stairs|bed|scaffold\p{L}*)|fell down (?:the )?stairs|hit head|altitude sickness|mountain sickness|the bends|decompression sickness|surfaced (?:too )?fast|surfaced from)(?![\p{L}])""", "iu"),
+         "exposure" to JsRegex.re("""(?<![\p{L}\p{N}])(?:stranded|stuck|trapped|lost|snowed in|broke(?:n)? down|locked (?:in|out))(?![\p{L}])[^.?!]{0,60}?(?<![\p{L}\p{N}])(?:-?\d+(?:[.,]\d+)?\s*°?\s*(?:c|f|celsius|fahrenheit)|freezing|below zero|sub-?zero|hypothermi\p{L}*|frostbit\p{L}*|heat ?stroke|heat exhaustion|overheating|no heat(?:ing)?|no (?:ac|air conditioning)|snowstorm|blizzard|whiteout|desert|scorching)(?![\p{L}])|(?<![\p{L}\p{N}])(?:-?\d+(?:[.,]\d+)?\s*°?\s*(?:c|f|celsius|fahrenheit)|freezing|below zero|sub-?zero|hypothermi\p{L}*|frostbit\p{L}*|heat ?stroke|heat exhaustion|overheating|no heat(?:ing)?|no (?:ac|air conditioning)|snowstorm|blizzard|whiteout|desert|scorching)(?![\p{L}])[^.?!]{0,60}?(?<![\p{L}\p{N}])(?:stranded|stuck|trapped|lost|snowed in|broke(?:n)? down|locked (?:in|out))(?![\p{L}])|(?<![\p{L}\p{N}])(?:hypothermi(?:a|c)|frostbit(?:e|ten)|heat ?stroke|heat exhaustion)(?![\p{L}])""", "iu"),
++        "survival" to JsRegex.re("""(?<![\p{L}\p{N}])(?:(?:go|last|survive|live)\s+without\s+(?:food|water|eating|drinking)|survive\s+(?:in|at)\s+[^?.!]{0,25}?(?:-?\d+(?:[.,]\d+)?\s*°?\s*[cf](?![\p{L}])|cold|icy|freezing)|\d+\s*ppm|(?:co|carbon monoxide)\s+(?:reading|level|alarm|detector)s?)(?![\p{L}])""", "iu"),
+     )
+ 
+     /** The rules a question fires, by name. */

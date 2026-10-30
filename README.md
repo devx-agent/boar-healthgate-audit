@@ -77,6 +77,8 @@ starvation, dehydration, cold-water and CO-level questions.
 1. **Widen `HealthTerms` with one `exposure2` rule** (`newrule.py`):
    `(go|last|survive|live) without (food|water|eating|drinking)` · `survive (in|at) … <temp>|cold|icy|freezing` · `\d+ ppm` · `(co|carbon monoxide) (reading|level|alarm|detector)`.
    It fires on h08, h10, h21 and h28, and adds **0** extra fires across all 1,515 boar-bench questions (held-out, selftests, slices).
+   A ready-to-apply Kotlin patch is in `healthterms-survival.patch` (one line added to `HealthTerms.RULES` in labrat-boar-fork). `gate.py` reads the regexes from the patched
+   Kotlin source and confirms that the patched rule fires on exactly h08/h10/h21/h28.
    The broader `surviv\w*` was rejected because it hit "which signature algorithms survive a quantum computer".
 2. **License by grounding, not provenance.** Accept a health answer when a kept chunk from *any* pack passes a
    relevance bar: for example HYBRID/DENSE score ≥ 0.8, or query-noun overlap with the title. Reject health-pack chunks below
